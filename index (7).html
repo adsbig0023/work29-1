@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nitya Book Publication - Information</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", Arial, sans-serif;
+      color: #111827;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      height: 105px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 7%;
+      box-shadow: 0 3px 12px rgba(0,0,0,.10);
+      position: relative;
+      z-index: 5;
+    }
+
+    .logo-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 13px;
+      background: #2864df;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 29px;
+      margin-right: 18px;
+      box-shadow: 0 5px 12px rgba(40,100,223,.25);
+    }
+
+    .logo-text {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      font-size: 31px;
+      color: #111827;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 70px 20px 100px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(224,237,255,.8), transparent 35%),
+        radial-gradient(circle at 15% 50%, rgba(239,246,255,.8), transparent 35%),
+        #fff;
+    }
+
+    .demo-label {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #d9e5f8;
+      border-radius: 30px;
+      padding: 10px 23px;
+      color: #2864df;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+      margin-bottom: 43px;
+    }
+
+    .demo-label span {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      background: #2864df;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: auto;
+      font-family: "Playfair Display", serif;
+      font-size: 58px;
+      line-height: 1.08;
+      font-weight: 800;
+    }
+
+    .hero h1 .blue {
+      color: #2864df;
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 38px auto;
+      color: #596579;
+      font-size: 25px;
+      line-height: 1.65;
+    }
+
+    .telegram-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      max-width: 730px;
+      height: 100px;
+      margin: 40px auto 0;
+      background: #20a6da;
+      border-radius: 27px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 27px;
+      font-weight: 800;
+      box-shadow: 0 10px 25px rgba(32,166,218,.22);
+      transition: .2s;
+    }
+
+    .telegram-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .telegram-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #fff;
+      color: #20a6da;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+    }
+
+    /* SECTION TITLE */
+    .section {
+      padding: 30px 4% 80px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 52px;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #687386;
+      font-size: 22px;
+      line-height: 1.5;
+      margin-bottom: 60px;
+    }
+
+    /* NOTICE */
+    .notice {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      padding: 32px;
+      margin-bottom: 75px;
+      border: 2px solid #f5dc75;
+      border-radius: 32px;
+      background: #fffdf4;
+      color: #8b481f;
+    }
+
+    .notice-icon {
+      min-width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: #fff4bd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 38px;
+    }
+
+    .notice h3 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .notice p {
+      font-size: 21px;
+      line-height: 1.65;
+    }
+
+    /* PLANS */
+    .plans {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .plan {
+      position: relative;
+      padding: 48px;
+      min-height: 550px;
+      border-radius: 42px;
+      background: #fff;
+      box-shadow: 0 12px 45px rgba(15,23,42,.08);
+      overflow: hidden;
+    }
+
+    .plan.popular {
+      background: #3064e5;
+      color: #fff;
+      box-shadow: 0 15px 45px rgba(48,100,229,.30);
+    }
+
+    .plan-number {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: #f5f6fa;
+      padding: 18px 28px;
+      border-radius: 0 0 0 30px;
+      font-size: 20px;
+      font-weight: 800;
+      color: #687080;
+    }
+
+    .popular .plan-number {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+    }
+
+    .plan-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 32px;
+      background: #eff5ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      margin-bottom: 55px;
+    }
+
+    .popular .plan-icon {
+      background: rgba(255,255,255,.18);
+    }
+
+    .plan h3 {
+      font-size: 50px;
+      margin-bottom: 45px;
+    }
+
+    .detail {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin: 28px 0;
+    }
+
+    .detail-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #f0f6ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .popular .detail-icon {
+      background: rgba(255,255,255,.12);
+    }
+
+    .detail small {
+      display: block;
+      color: #70798a;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .popular .detail small {
+      color: #fff;
+    }
+
+    .detail strong {
+      font-size: 27px;
+    }
+
+    .registration {
+      margin-top: 50px;
+      border: 2px solid #edf0f4;
+      background: #fafbfc;
+      border-radius: 28px;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .popular .registration {
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.25);
+    }
+
+    /* WHY */
+    .why {
+      margin: 50px auto 100px;
+      max-width: 1100px;
+      padding: 70px 50px;
+      border-radius: 45px;
+      background: #f9fafc;
+      border: 1px solid #edf0f4;
+      text-align: center;
+    }
+
+    .why h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 57px;
+      margin-bottom: 20px;
+    }
+
+    .why > p {
+      color: #6b7484;
+      font-size: 24px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .safe-box {
+      margin-top: 55px;
+      background: #fff;
+      border: 4px solid #d5f7e3;
+      border-radius: 30px;
+      padding: 45px;
+    }
+
+    .safe-box h3 {
+      color: #168442;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .safe-box p {
+      color: #596579;
+      font-size: 23px;
+      line-height: 1.6;
+    }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      background: #101827;
+      padding: 110px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .footer-cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 50px;
+      margin-bottom: 50px;
+    }
+
+    .footer-cta .telegram-btn {
+      margin: auto;
+    }
+
+    .demo-warning {
+      max-width: 800px;
+      margin: 40px auto 0;
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      header {
+        height: 92px;
+        padding: 0 25px;
+      }
+
+      .logo-box {
+        width: 51px;
+        height: 51px;
+        margin-right: 14px;
+      }
+
+      .logo-text {
+        font-size: 25px;
+      }
+
+      .hero {
+        padding: 55px 20px 80px;
+      }
+
+      .demo-label {
+        font-size: 15px;
+        padding: 9px 15px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        line-height: 1.55;
+      }
+
+      .telegram-btn {
+        height: 82px;
+        font-size: 21px;
+        border-radius: 23px;
+      }
+
+      .section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .section-title {
+        font-size: 40px;
+      }
+
+      .section-subtitle {
+        font-size: 18px;
+      }
+
+      .notice {
+        padding: 25px;
+        gap: 18px;
+        border-radius: 25px;
+      }
+
+      .notice-icon {
+        min-width: 55px;
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+      }
+
+      .notice h3 {
+        font-size: 20px;
+      }
+
+      .notice p {
+        font-size: 17px;
+      }
+
+      .plan {
+        padding: 35px 27px;
+        border-radius: 32px;
+      }
+
+      .plan-icon {
+        width: 85px;
+        height: 85px;
+        margin-bottom: 38px;
+      }
+
+      .plan h3 {
+        font-size: 40px;
+      }
+
+      .detail strong {
+        font-size: 22px;
+      }
+
+      .detail small {
+        font-size: 17px;
+      }
+
+      .registration {
+        font-size: 19px;
+        padding: 20px;
+      }
+
+      .why {
+        padding: 50px 25px;
+        border-radius: 30px;
+      }
+
+      .why h2 {
+        font-size: 39px;
+      }
+
+      .why > p {
+        font-size: 19px;
+      }
+
+      .safe-box {
+        padding: 30px 20px;
+      }
+
+      .safe-box h3 {
+        font-size: 24px;
+      }
+
+      .safe-box p {
+        font-size: 18px;
+      }
+
+      .footer-cta {
+        padding: 80px 20px;
+      }
+
+      .footer-cta h2 {
+        font-size: 39px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-box">📖</div>
+    <div class="logo-text">Nitya book publication</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="demo-label">
+      <span></span>
+      Informational / Demo Page
+    </div>
+
+    <h1>
+      Turn your handwriting<br>
+      into <span class="blue">assured income.</span>
+    </h1>
+
+    <p>
+      Information about handwriting and writing projects.
+      Please verify project details, company information and
+      payment terms independently before making any payment.
+    </p>
+
+    <!-- अपना Telegram URL यहाँ डालें -->
+    <a href="https://t.me/YOUR_USERNAME"
+       class="telegram-btn"
+       target="_blank">
+      <span class="telegram-icon">➤</span>
+      Message us on Telegram
+    </a>
+
+  </section>
+
+
+  <!-- PROJECT PLANS -->
+  <section class="section">
+
+    <h2 class="section-title">Project Plans 📚</h2>
+
+    <p class="section-subtitle">
+      Select a workload that fits your schedule.
+      Review all terms before accepting any project.
+    </p>
+
+
+    <!-- NOTICE -->
+    <div class="notice">
+
+      <div class="notice-icon">⚠️</div>
+
+      <div>
+        <h3>IMPORTANT NOTICE 🔴</h3>
+
+        <p>
+          Project requirements, registration conditions,
+          payment terms and refund policies should always be
+          independently verified with the organization before
+          making any payment.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="plans">
+
+      <!-- PLAN 1 -->
+      <div class="plan">
+
+        <div class="plan-number">PLAN 1</div>
+
+        <div class="plan-icon">📄</div>
+
+        <h3>Starter</h3>
+
+        <div class="detail">
+          <div class="detail-icon">📄</div>
+          <div>
+            <small>TASK</small>
+            <strong>50 Pages (100 Sides)</strong>
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="detail-icon">⏰</div>
+          <div>
+            <small>DURATION</small>
+            <strong>7 Days</strong>
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="detail-icon">💵</div>
+          <div>
+            <small>SALARY</small>
+            <strong>₹22,000/-</strong>
+          </div>
+        </div>
+
+        <div class="registration">
+          <span>✓ Registration</span>
+          <span>₹550/-</span>
+        </div>
+
+      </div>
+
+
+      <!-- PLAN 2 -->
+      <div class="plan popular">
+
+        <div class="plan-number">PLAN 2</div>
+
+        <div class="plan-icon">💼</div>
+
+        <h3>Most Popular</h3>
+
+        <div class="detail">
+          <div class="detail-icon">📄</div>
+          <div>
+            <small>TASK</small>
+            <strong>80 Pages (160 Sides)</strong>
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="detail-icon">⏰</div>
+          <div>
+            <small>DURATION</small>
+            <strong>15 Days</strong>
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="detail-icon">💵</div>
+          <div>
+            <small>SALARY</small>
+            <strong>₹28,000/-</strong>
+          </div>
+        </div>
+
+        <div class="registration">
+          <span>✓ Registration</span>
+          <span>₹850/-</span>
+        </div>
+
+      </div>
+
+
+      <!-- PLAN 3 -->
+      <div class="plan">
+
+        <div class="plan-number">PLAN 3</div>
+
+        <div class="plan-icon">📖</div>
+
+        <h3>Premium</h3>
+
+        <div class="detail">
+          <div class="detail-icon">📄</div>
+          <div>
+            <small>TASK</small>
+            <strong>120 Pages (240 Sides)</strong>
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="detail-icon">⏰</div>
+          <div>
+            <small>DURATION</small>
+            <strong>30 Days</strong>
+          </div>
+        </div>
+
+        <div class="detail">
+          <div class="detail-icon">💵</div>
+          <div>
+            <small>SALARY</small>
+            <strong>₹40,000/-</strong>
+          </div>
+        </div>
+
+        <div class="registration">
+          <span>✓ Registration</span>
+          <span>₹1,100/-</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY CHOOSE US -->
+  <section class="why">
+
+    <h2>Why Choose Us? 💎</h2>
+
+    <p>
+      We prioritize clear project information,
+      transparent policies and easy communication.
+    </p>
+
+    <div class="safe-box">
+
+      <h3>⚖️ VERIFY BEFORE YOU PAY</h3>
+
+      <p>
+        Always verify the organization, project terms,
+        registration requirements and refund conditions
+        before sending money or personal documents.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer-cta">
+
+    <h2>Ready to learn more?</h2>
+
+    <!-- अपना Telegram URL यहाँ भी डालें -->
+    <a href="https://t.me/YOUR_USERNAME"
+       class="telegram-btn"
+       target="_blank">
+      <span class="telegram-icon">➤</span>
+      Message us on Telegram
+    </a>
+
+    <p class="demo-warning">
+      This webpage is an informational/demo template.
+      Project availability, earnings, fees and refund policies
+      are subject to independent verification.
+    </p>
+
+  </footer>
+
+</body>
+</html>
