@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Work From Home</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(180deg,#08b96c,#079b65);
+    min-height:100vh;
+    padding:55px 10px 25px;
+}
+
+.container{
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+}
+
+
+/* =================================
+   PREMIUM TELEGRAM BUTTON
+================================= */
+
+.telegram-btn{
+    position:relative;
+    display:block;
+
+    width:100%;
+    height:62px;
+    line-height:62px;
+
+    border-radius:35px;
+
+    background:linear-gradient(
+        110deg,
+        #075eff,
+        #087dff,
+        #08aef0,
+        #087dff,
+        #075eff
+    );
+
+    background-size:250% 100%;
+
+    color:#fff;
+    text-decoration:none;
+
+    text-align:center;
+
+    font-size:18px;
+    font-weight:800;
+
+    margin-bottom:14px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 5px 15px rgba(0,95,255,.35),
+        0 0 18px rgba(0,174,255,.25);
+
+    animation:
+        premiumGlow 2.4s ease-in-out infinite,
+        gradientMove 4s linear infinite;
+
+    transition:transform .2s;
+}
+
+
+/* SHINE EFFECT */
+
+.telegram-btn::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-80%;
+
+    width:45%;
+    height:100%;
+
+    background:linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:shine 2.8s ease-in-out infinite;
+
+    pointer-events:none;
+}
+
+
+/* TEXT */
+
+.telegram-btn .button-content{
+    position:relative;
+    z-index:2;
+}
+
+
+/* ROCKET */
+
+.telegram-btn .rocket{
+    display:inline-block;
+
+    margin-right:5px;
+
+    animation:
+        rocketMove 1.8s ease-in-out infinite;
+}
+
+
+/* GLOW */
+
+@keyframes premiumGlow{
+
+    0%,100%{
+        box-shadow:
+            0 5px 15px rgba(0,95,255,.35),
+            0 0 15px rgba(0,174,255,.20);
+    }
+
+    50%{
+        box-shadow:
+            0 6px 22px rgba(0,95,255,.55),
+            0 0 30px rgba(0,190,255,.45);
+    }
+}
+
+
+/* MOVING GRADIENT */
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+
+/* SHINE */
+
+@keyframes shine{
+
+    0%{
+        left:-80%;
+    }
+
+    55%{
+        left:130%;
+    }
+
+    100%{
+        left:130%;
+    }
+}
+
+
+/* ROCKET MOVEMENT */
+
+@keyframes rocketMove{
+
+    0%,100%{
+        transform:translateX(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateX(4px) rotate(-5deg);
+    }
+}
+
+
+/* CLICK EFFECT */
+
+.telegram-btn:active{
+    transform:scale(.96);
+}
+
+
+/* =================================
+   MAIN WHITE CARD
+================================= */
+
+.main-card{
+    width:100%;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:18px 12px 17px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.16);
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.title{
+    text-align:center;
+
+    font-size:27px;
+
+    line-height:1.15;
+
+    font-weight:800;
+
+    color:#111;
+
+    margin-bottom:6px;
+}
+
+
+/* =================================
+   EARNING
+================================= */
+
+.earning{
+    text-align:center;
+
+    font-size:21px;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    color:#1688e8;
+
+    margin-bottom:17px;
+}
+
+
+/* =================================
+   FEATURES
+================================= */
+
+.features{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:9px;
+
+    margin-bottom:15px;
+}
+
+.feature{
+    background:#f4f5f9;
+
+    border-radius:12px;
+
+    min-height:51px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:7px 4px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#111;
+}
+
+.feature span{
+    font-size:17px;
+    margin-right:4px;
+}
+
+
+/* =================================
+   SMALL IMAGE
+================================= */
+
+.image-box{
+    width:100%;
+
+    height:260px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    background:#f1f1f1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.image-box img{
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+
+/* =================================
+   SECOND TELEGRAM
+================================= */
+
+.second-btn{
+    margin-top:14px;
+}
+
+
+/* =================================
+   SUBSCRIBE BUTTON
+================================= */
+
+.subscribe-btn{
+    display:block;
+
+    width:100%;
+
+    height:62px;
+
+    line-height:62px;
+
+    margin-top:14px;
+
+    border-radius:35px;
+
+    background:linear-gradient(
+        90deg,
+        #ff9d00,
+        #ff7900,
+        #ff4d26
+    );
+
+    color:#fff;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 4px 12px rgba(255,100,0,.25);
+
+    transition:transform .2s;
+}
+
+.subscribe-btn:active{
+    transform:scale(.96);
+}
+
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media(max-width:380px){
+
+    body{
+        padding-left:8px;
+        padding-right:8px;
+    }
+
+    .container{
+        max-width:100%;
+    }
+
+    .title{
+        font-size:25px;
+    }
+
+    .earning{
+        font-size:19px;
+    }
+
+    .feature{
+        font-size:14px;
+    }
+
+    .image-box{
+        height:230px;
+    }
+
+    .telegram-btn,
+    .subscribe-btn{
+        height:58px;
+        line-height:58px;
+        font-size:17px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- PREMIUM TELEGRAM BUTTON -->
+
+    <a
+        href="https://t.me/YOUR_TELEGRAM_LINK"
+        target="_blank"
+        class="telegram-btn"
+    >
+
+        <span class="button-content">
+            <span class="rocket">🚀</span>
+            JOIN TELEGRAM CHANNEL
+        </span>
+
+    </a>
+
+
+    <!-- MAIN CARD -->
+
+    <div class="main-card">
+
+        <h1 class="title">
+            Handwriting Work From Home
+        </h1>
+
+        <div class="earning">
+            Earn ₹25,000 - ₹50,000 / Month
+        </div>
+
+
+        <!-- FEATURES -->
+
+        <div class="features">
+
+            <div class="feature">
+                <span>✅</span>
+                Work From Home
+            </div>
+
+            <div class="feature">
+                <span>✅</span>
+                No Investment
+            </div>
+
+            <div class="feature">
+                <span>✅</span>
+                Daily Payment
+            </div>
+
+            <div class="feature">
+                <span>✅</span>
+                Limited Seats
+            </div>
+
+        </div>
+
+
+        <!-- IMAGE -->
+
+        <div class="image-box">
+
+            <img
+                src="work.jpg"
+                alt="Work From Home"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- SECOND PREMIUM TELEGRAM BUTTON -->
+
+    <a
+        href="https://t.me/YOUR_TELEGRAM_LINK"
+        target="_blank"
+        class="telegram-btn second-btn"
+    >
+
+        <span class="button-content">
+            <span class="rocket">🚀</span>
+            JOIN TELEGRAM CHANNEL
+        </span>
+
+    </a>
+
+
+    <!-- SUBSCRIBE BUTTON -->
+
+    <a
+        href="https://t.me/YOUR_TELEGRAM_LINK"
+        target="_blank"
+        class="subscribe-btn"
+    >
+        ⭐ SUBSCRIBE NOW
+    </a>
+
+
+</div>
+
+</body>
+</html>
